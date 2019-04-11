@@ -1,3 +1,4 @@
+const path= require('path')
 //configuracion de las variables de entorno para configurar el servidor
 console.log('NODE_ENV = ', process.env.NODE_ENV);
 //Evitar errores de escritura
@@ -13,10 +14,16 @@ const ENV = process.env.NODE_ENV || environments.development;
 // Escribimos un objeto de congig para cada entorno 
 const config = {
     [environments.production]: {
-        PORT: 80
+        PORT: 80,
+        TRAVELS:  {
+            IMG_URL: path.join(__dirname,'..','public','image')
+        }
     },
     [environments.development]: {
-        PORT: 8080
+        PORT: 8080,
+        TRAVELS:  {
+            IMG_URL: path.join(__dirname,'..','public','image')
+        }
     },
 
 }

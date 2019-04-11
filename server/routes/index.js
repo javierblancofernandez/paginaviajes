@@ -1,6 +1,6 @@
 //router hace una lista de direcciones que va 
 const router = require ('express').Router();
-
+const multer = require('../config/multer');
 
 router.get('/',(req,res)=>{
     res.send(process.env.NODE_ENV);
